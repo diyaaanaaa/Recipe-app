@@ -11,9 +11,9 @@ class WelcomePage extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
-            Image.asset('assets/images/welcome.png'), // Background image
+            Image.asset('assets/images/welcome.png'),
             Positioned(
-              bottom: 216, // Position the button at the bottom of the screen
+              bottom: 216,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -22,9 +22,8 @@ class WelcomePage extends StatelessWidget {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        const Color(0xFF7EE36D), // Button background color
-                    foregroundColor: Colors.white, // Button text color
+                    backgroundColor: const Color(0xFF7EE36D),
+                    foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 80, vertical: 8)),
                 child: const Text('START',

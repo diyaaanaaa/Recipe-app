@@ -49,25 +49,6 @@ class _SearchBarPageState extends State<SearchBarPage> {
       });
     }
   }
-  // Future<void> initializePreferences() async {
-  //   prefs = await SharedPreferences.getInstance();
-  //   String token = prefs.getString("token")!;
-  //   var url =
-  //       Uri.parse('http://192.168.209.80:8080/recipes/by-title?title=pizza');
-  //   final response = await client.get(url, headers: {
-  //     'Content-Type': 'application/json',
-  //     'Accept': 'application/json',
-  //     'Authorization': 'Bearer $token',
-  //   });
-  //   print(response.statusCode);
-  //   if (response.statusCode == 200) {
-  //     final List<dynamic> data = json.decode(response.body);
-  //     setState(() {
-  //       recipes =
-  //           data.map((recipeJson) => Recipe.fromJson(recipeJson)).toList();
-  //     });
-  //   }
-  // }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -121,12 +102,11 @@ class _SearchBarPageState extends State<SearchBarPage> {
               itemBuilder: (context, index) {
                 final recipe = recipes[index];
                 return Card(
-                  margin: EdgeInsets.all(8), // Space between cards
+                  margin: EdgeInsets.all(8),
                   shape: RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.circular(10), // Card corner radius
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  elevation: 5, // Card shadow
+                  elevation: 5,
                   child: InkWell(
                     onTap: () {
                       Navigator.push(
@@ -143,17 +123,15 @@ class _SearchBarPageState extends State<SearchBarPage> {
                           borderRadius: BorderRadius.circular(10),
                           child: Image.network(
                             "http://192.168.209.80:8080/images/${recipe.image}",
-                            width: double
-                                .infinity, // Image takes the full width of the card
-                            height: 200, // Adjust the height as needed
+                            width: double.infinity,
+                            height: 200,
                             fit: BoxFit.cover,
                           ),
                         ),
                         Container(
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color: Colors.black
-                                .withOpacity(0.5), // Semi-transparent overlay
+                            color: Colors.black.withOpacity(0.5),
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(10),
                               bottomRight: Radius.circular(10),
@@ -163,8 +141,8 @@ class _SearchBarPageState extends State<SearchBarPage> {
                             recipe.title,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 16, // Adjust the font size as needed
-                              color: Colors.white, // Title text color
+                              fontSize: 16,
+                              color: Colors.white,
                             ),
                           ),
                         ),
@@ -173,46 +151,7 @@ class _SearchBarPageState extends State<SearchBarPage> {
                   ),
                 );
               },
-            )
-
-            // child: ListView.builder(
-            //   itemCount: recipes.length,
-            //   itemBuilder: (context, index) {
-            //     final recipe = recipes[index];
-            //     return ListTile(
-            //       leading: InkWell(
-            //         onTap: () {
-            //           Navigator.push(
-            //             context,
-            //             MaterialPageRoute(
-            //               builder: (context) => RecipePage(recipe: recipe),
-            //             ),
-            //           );
-            //         },
-            //         child: Column(
-            //           crossAxisAlignment: CrossAxisAlignment.stretch,
-            //           children: [
-            //             Expanded(
-            //               child: ClipRRect(
-            //                 borderRadius: BorderRadius.circular(
-            //                     16), // Adjust the radius as needed
-            //                 child: Image.network(
-            //                   "http://192.168.209.80:8080/images/${recipe.image}",
-            //                   fit: BoxFit.cover,
-            //                 ),
-            //               ),
-            //             ),
-            //             // Padding(
-            //             //   padding: const EdgeInsets.all(10.0),
-            //             //   // child: Text(recipe.title),
-            //             // ),
-            //           ],
-            //         ),
-            //       ),
-            //     );
-            //   },
-            // ),
-            ),
+            )),
         bottomNavigationBar: SizedBox(
           height: 140,
           child: BottomNavigationBar(

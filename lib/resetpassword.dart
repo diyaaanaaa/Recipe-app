@@ -65,17 +65,12 @@ class ResetPasswordPage extends StatelessWidget {
                 decoration: const InputDecoration(
                   labelText: 'New password',
                   hintText: 'Type your New Password',
-                  border: InputBorder.none, // Removes underline
+                  border: InputBorder.none,
                   labelStyle: TextStyle(
-                      fontFamily: 'Gilroy-Regular',
-                      color:
-                          Color(0xFF707070) // Set the Gilroy font for the label
-                      ),
+                      fontFamily: 'Gilroy-Regular', color: Color(0xFF707070)),
                   hintStyle: TextStyle(
-                    color: Color(
-                        0xFFE7E7E7), // Set the color for the hint text here
-                    fontFamily:
-                        'Gilroy-Regular', // Set the Gilroy font for the hint text
+                    color: Color(0xFFE7E7E7),
+                    fontFamily: 'Gilroy-Regular',
                   ),
                 ),
               ),
@@ -99,17 +94,12 @@ class ResetPasswordPage extends StatelessWidget {
                 decoration: const InputDecoration(
                   labelText: 'Confirm password',
                   hintText: 'Confirm your password',
-                  border: InputBorder.none, // Removes underline
+                  border: InputBorder.none,
                   labelStyle: TextStyle(
-                      fontFamily: 'Gilroy-Regular',
-                      color:
-                          Color(0xFF707070) // Set the Gilroy font for the label
-                      ),
+                      fontFamily: 'Gilroy-Regular', color: Color(0xFF707070)),
                   hintStyle: TextStyle(
-                    color: Color(
-                        0xFFE7E7E7), // Set the color for the hint text here
-                    fontFamily:
-                        'Gilroy-Regular', // Set the Gilroy font for the hint text
+                    color: Color(0xFFE7E7E7),
+                    fontFamily: 'Gilroy-Regular',
                   ),
                 ),
               ),
@@ -125,9 +115,8 @@ class ResetPasswordPage extends StatelessWidget {
                           builder: (context) => const PasswordResetedPage()));
                 },
                 style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        const Color(0xFF7EE36D), // Button background color
-                    foregroundColor: Colors.white, // Button text color
+                    backgroundColor: const Color(0xFF7EE36D),
+                    foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 120, vertical: 8)),
                 child: const Text('Continue',

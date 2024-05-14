@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: RouteNames.welcomepage, // Set the initial route
+      initialRoute: RouteNames.welcomepage,
       routes: {
         RouteNames.welcomepage: (context) => WelcomePage(),
         RouteNames.homepage: (context) => HomeScreen(),

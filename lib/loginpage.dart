@@ -8,7 +8,7 @@ import 'package:recipe_app/forgotpassword.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class RouteNames {
-  static const String homepage = 'homepage'; // Example route name
+  static const String homepage = 'homepage';
 }
 
 class LoginPage extends StatefulWidget {
@@ -37,7 +37,6 @@ class _LoginPageState extends State<LoginPage> {
   Future<void> login() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     const String url = 'http://192.168.209.80:8080/auth/login';
-    // const String url = 'http://localhost:8080/auth/login';
     final Uri myUrl = Uri.parse(url);
     print(myUrl);
     try {
@@ -48,15 +47,12 @@ class _LoginPageState extends State<LoginPage> {
           {"username": username.text, "password": password.text},
         ),
       );
-      // print("hjj");
+
       print(response.statusCode);
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         prefs.setString('token', data['accessToken']);
-        // prefs.setString('refreshToken', data['refreshToken']);
         final Map<String, dynamic> payload = Jwt.parseJwt(data['accessToken']);
-        // prefs.setString('walletId', payload['userId'].toString());
-        // prefs.setString('email', payload['email']);
         for (var i in payload['role']) {
           if (i != 'ROLE_CUSTOMER') {
             prefs.setString('role', i);

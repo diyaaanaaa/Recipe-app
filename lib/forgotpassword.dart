@@ -76,9 +76,8 @@ class ForgotPassword extends StatelessWidget {
                           builder: (context) => const ResetPasswordPage()));
                 },
                 style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        const Color(0xFF7EE36D), // Button background color
-                    foregroundColor: Colors.white, // Button text color
+                    backgroundColor: const Color(0xFF7EE36D),
+                    foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 75, vertical: 8)),
                 child: const Text('Recover Password',

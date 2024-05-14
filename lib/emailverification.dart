@@ -86,9 +86,7 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
             ),
             const SizedBox(height: 20),
             TextButton(
-              onPressed: () {
-                // Resend code logic
-              },
+              onPressed: () {},
               child: RichText(
                 text: const TextSpan(
                   style: TextStyle(
@@ -152,7 +150,6 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
     );
 
     if (response.statusCode == 200) {
-      // Verification successful, navigate to verified page
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const VerifiedPage()),

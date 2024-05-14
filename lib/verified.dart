@@ -35,7 +35,7 @@ class VerifiedPage extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Gilroy-Bold',
                 fontSize: 24,
-                color: Color(0xFF3E3E3E), // Title text color
+                color: Color(0xFF3E3E3E),
               ),
             ),
             const SizedBox(height: 10),
@@ -44,7 +44,7 @@ class VerifiedPage extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Gilroy-Regular',
                 fontSize: 16,
-                color: Color(0xFF707070), // Subtitle text color
+                color: Color(0xFF707070),
               ),
             ),
             const SizedBox(height: 30),
@@ -58,9 +58,8 @@ class VerifiedPage extends StatelessWidget {
                             builder: (context) => const LoginPage()));
                   },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                          const Color(0xFF7EE36D), // Button background color
-                      foregroundColor: Colors.white, // Button text color
+                      backgroundColor: const Color(0xFF7EE36D),
+                      foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 75, vertical: 8)),
                   child: const Text('Verify and Proceed',

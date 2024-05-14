@@ -51,38 +51,6 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: const Color.fromARGB(255, 250, 255, 242),
-      //   automaticallyImplyLeading: false,
-      //   title: PreferredSize(
-      //     preferredSize: const Size.fromHeight(80.0),
-      //     child: Align(
-      //       alignment: Alignment.bottomCenter,
-      //       child: Container(
-      //         height: 40,
-      //         decoration: BoxDecoration(
-      //           color: const Color.fromARGB(255, 250, 249, 249),
-      //           borderRadius: BorderRadius.circular(19),
-      //           boxShadow: const [
-      //             BoxShadow(
-      //               color: Colors.black26,
-      //               blurRadius: 4,
-      //               offset: Offset(0, 2),
-      //             ),
-      //           ],
-      //         ),
-      //         child: const Center(
-      //           child: TextField(
-      //             decoration: InputDecoration(
-      //               prefixIcon: Icon(Icons.search),
-      //               border: InputBorder.none,
-      //             ),
-      //           ),
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      // ),
       body: DecoratedBox(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -141,14 +109,6 @@ class _SearchPageState extends State<SearchPage> {
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
                       GestureDetector(
-                        // onTap: () {
-                        //   Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => SearchBarPage(
-                        //             searchQuery: _searchController.text)),
-                        //   );
-                        // },
                         child: Column(
                           children: [
                             Container(
@@ -498,8 +458,7 @@ class _SearchPageState extends State<SearchPage> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        const Color(0xFF7EE36D), // Button background color
+                    backgroundColor: const Color(0xFF7EE36D),
                     foregroundColor: Colors.white,
                   ),
                   child: const Text('Continue',

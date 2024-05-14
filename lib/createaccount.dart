@@ -185,15 +185,12 @@ class CreateAccount extends StatelessWidget {
               alignment: Alignment.center,
               child: ElevatedButton(
                 onPressed: () {
-                  // Check if all fields are filled
                   if (nameController.text.isNotEmpty &&
                       emailController.text.isNotEmpty &&
                       passwordController.text.isNotEmpty &&
                       confirmPasswordController.text.isNotEmpty) {
-                    // Check if password and confirm password match
                     if (passwordController.text ==
                         confirmPasswordController.text) {
-                      // Sign up
                       signUp(
                         nameController.text,
                         emailController.text,
@@ -218,9 +215,8 @@ class CreateAccount extends StatelessWidget {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        const Color(0xFF7EE36D), // Button background color
-                    foregroundColor: Colors.white, // Button text color
+                    backgroundColor: const Color(0xFF7EE36D),
+                    foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 120, vertical: 8)),
                 child: const Text('SIGN UP',
@@ -245,7 +241,7 @@ class CreateAccount extends StatelessWidget {
                   child: const Text(
                     'SIGN IN',
                     style: TextStyle(
-                      color: Color(0xFF7EE36D), // Green color
+                      color: Color(0xFF7EE36D),
                       fontFamily: 'Gilroy-Bold',
                     ),
                   ),

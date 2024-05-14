@@ -64,34 +64,26 @@ class _NewRecipePageState extends State<NewRecipePage> {
         url,
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': bearerToken, // Add the Authorization header
+          'Authorization': bearerToken,
         },
         body: json.encode(body),
       );
       print("here");
       print(response.body);
-      // Check the response status code
+
       if (response.statusCode == 200) {
-        // If the server returns an OK response, navigate to the MyRecipePage
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => const MyRecipePage()),
         );
       } else {
         print(response.statusCode);
-        // If the server did not return an OK response, throw an exception
         throw Exception('Failed to save recipe');
       }
     } catch (e) {
-      // Handle any errors that occur during the POST request
       print('Error saving recipe: $e');
     }
-
-    // ... rest of your code ...
   }
-
-  // Logic to save the recipe
-  // You can use _titleController.text and _descriptionController.text to get the input values
 
   @override
   Widget build(BuildContext context) {

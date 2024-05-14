@@ -31,10 +31,9 @@ class _HomeScreenState extends State<HomeScreen> {
     prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString("token");
     if (token != null) {
-      // Existing endpoint for pizza
       var pizzaUrl =
           Uri.parse('http://192.168.209.80:8080/recipes/by-title?title=pizza');
-      // New endpoint for hot chocolate
+
       var hotChocolateUrl = Uri.parse(
           'http://192.168.209.80:8080/recipes/by-title?title=hot%20chocolat');
       var strawberrycompotUrl = Uri.parse(
@@ -44,7 +43,6 @@ class _HomeScreenState extends State<HomeScreen> {
       var pancakesUrl = Uri.parse(
           'http://192.168.209.80:8080/recipes/by-title?title=Pancakes');
 
-      // You can create a function to fetch recipes
       await fetchRecipes(pizzaUrl, token);
       await fetchRecipes(hotChocolateUrl, token);
       await fetchRecipes(strawberrycompotUrl, token);
@@ -66,12 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
             .map((recipeJson) => Recipe.fromJson(recipeJson))
             .cast<Recipe>()
             .toList());
-        favoriteStatus = List.filled(
-            recipes.length, false); // Initialize favoriteStatus here
+        favoriteStatus = List.filled(recipes.length, false);
       });
-    } else {
-      // Handle other status codes or errors
-    }
+    } else {}
   }
 
   void _onItemTapped(int index) {
@@ -80,7 +75,6 @@ class _HomeScreenState extends State<HomeScreen> {
     });
     switch (index) {
       case 0:
-        // Navigate to home
         break;
       case 1:
         Navigator.push(context,
@@ -100,7 +94,6 @@ class _HomeScreenState extends State<HomeScreen> {
     void initState() {
       super.initState();
       initializePreferences();
-      // Initialize all recipes as not favorite
       favoriteStatus = List.filled(recipes.length, false);
     }
   }
@@ -157,18 +150,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Expanded(
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(
-                                16), // Adjust the radius as needed
+                            borderRadius: BorderRadius.circular(16),
                             child: Image.network(
                               "http://192.168.209.80:8080/images/${recipe.image}",
                               fit: BoxFit.cover,
                             ),
                           ),
                         ),
-                        // Padding(
-                        //   padding: const EdgeInsets.all(10.0),
-                        //   // child: Text(recipe.title),
-                        // ),
                       ],
                     ),
                   ),

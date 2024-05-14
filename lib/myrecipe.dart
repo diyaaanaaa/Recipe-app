@@ -23,7 +23,6 @@ class _MyRecipePageState extends State<MyRecipePage> {
   }
 
   Future<void> _fetchRecipes() async {
-    // Replace with your server endpoint to fetch recipes
     final String bearerToken =
         'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJnYXJ5YW4uYW5uYUBnbWFpbC5jb20iLCJyb2xlIjpbIlJPTEVfQ1VTVE9NRVIiXSwidXNlcklkIjo3LCJuYW1lIjoiQW5uYSBNYXJnYXJ5YW4iLCJpYXQiOjE3MTU2Mjc3NzYsImV4cCI6MTcxNjQ5MTc3Nn0.u7B3W1PvanfPLM767BZWllHkFqxJaRgSTu0ERFFkzsk';
     final Uri url = Uri.parse('http://192.168.209.80:8080/account/my-recipes');
@@ -44,11 +43,9 @@ class _MyRecipePageState extends State<MyRecipePage> {
               .toList();
         });
       } else {
-        // Handle the case where the server returns a non-200 status code
         print('Failed to fetch recipes: ${response.body}');
       }
     } catch (e) {
-      // Handle any errors that occur during the fetch
       print('Error fetching recipes: $e');
     }
   }
@@ -57,8 +54,7 @@ class _MyRecipePageState extends State<MyRecipePage> {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const NewRecipePage()),
-    ).then((_) =>
-        _fetchRecipes()); // Fetch recipes again when a new recipe is added
+    ).then((_) => _fetchRecipes());
   }
 
   int _selectedIndex = 2;
